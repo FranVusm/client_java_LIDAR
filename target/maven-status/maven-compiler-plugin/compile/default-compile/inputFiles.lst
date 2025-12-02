@@ -1,0 +1,9 @@
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/application/monitor/PollingMonitor.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/client/domain/dto/LIDARSetters.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/infrastructure/OpcUaConnector.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/infrastructure/MemoryHistoryRepo.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/application/monitor/SubscriptionMonitor.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/client/domain/dto/LIDARGetters.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/client/Main.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/client/domain/LIDAR.java
+/mnt/c/Users/SuperUsuario/test_sim/java_client_lidar/lidar-java-client/src/main/java/lidar/application/controls/ControlsMethods.java
