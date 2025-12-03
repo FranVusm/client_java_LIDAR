@@ -22,31 +22,6 @@ public class LIDARGetters {
         return null;
     }
 
-    // Helper for Int64 (Java Long)
-    private static Long convertToLong(Object value) {
-        if (value == null)
-            return null;
-        if (value instanceof Long)
-            return (Long) value;
-        if (value instanceof Integer)
-            return ((Integer) value).longValue();
-        if (value instanceof Number)
-            return ((Number) value).longValue();
-        return null;
-    }
-
-    private static Double convertToDouble(Object value) {
-        if (value == null)
-            return null;
-        if (value instanceof Double)
-            return (Double) value;
-        if (value instanceof Float)
-            return ((Float) value).doubleValue();
-        if (value instanceof Number)
-            return ((Number) value).doubleValue();
-        return null;
-    }
-
     // Specific helper for Float (some variables explicitly ask for float)
     private static Float convertToFloat(Object value) {
         if (value == null)
@@ -95,39 +70,6 @@ public class LIDARGetters {
                     .toArray(String[]::new);
         }
         return new String[0];
-    }
-
-    // Helper for Boolean Array
-    private static Boolean[] convertToBooleanArray(Object value) {
-        if (value == null)
-            return new Boolean[0];
-
-        // Case 1: Already a Boolean wrapper array
-        if (value instanceof Boolean[]) {
-            return (Boolean[]) value;
-        }
-
-        // Case 2: It is a boolean primitive array
-        if (value instanceof boolean[]) {
-            boolean[] primitiveArray = (boolean[]) value;
-            Boolean[] wrapperArray = new Boolean[primitiveArray.length];
-            for (int i = 0; i < primitiveArray.length; i++) {
-                wrapperArray[i] = primitiveArray[i];
-            }
-            return wrapperArray;
-        }
-
-        // Case 3: Milo sometimes returns Object[] containing Booleans or Integers (0/1)
-        if (value instanceof Object[]) {
-            Object[] objArray = (Object[]) value;
-            return Arrays.stream(objArray)
-                    .map(obj -> convertToBoolean(obj)) // Reuse your individual convertToBoolean
-                    .toArray(Boolean[]::new);
-        }
-
-        // Debug: Si llega algo extraño, imprímelo en consola para saber qué es
-        System.out.println("ADVERTENCIA: Tipo de dato inesperado para Boolean Array: " + value.getClass().getName());
-        return new Boolean[0];
     }
 
     public static Integer getLidarState(OpcUaConnector connector) throws Exception {

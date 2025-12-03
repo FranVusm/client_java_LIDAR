@@ -9,7 +9,6 @@ import lidar.infrastructure.MemoryHistoryRepo;
 import lidar.infrastructure.OpcUaConnector;
 
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -337,8 +336,6 @@ public class Main {
                     if (values.isEmpty()) {
                         System.out.println("ADVERTENCIA: El objeto LIDAR no tiene valores mapeados.");
                     } else {
-                        // Imprimir TODO, incluso si es NULL, para ver si el monitor está intentando
-                        // leer
                         for (Map.Entry<String, Object> entry : values.entrySet()) {
                             String valString = (entry.getValue() == null) ? "NULL (Sin datos)"
                                     : entry.getValue().toString();
