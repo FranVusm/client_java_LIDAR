@@ -34,10 +34,10 @@ import java.util.*;
 public class OpcUaConnector {
     private static final Logger logger = LoggerFactory.getLogger(OpcUaConnector.class);
 
-    private final String endpointUrl;
-    private final boolean isSecure;
-    private final String certPath;
-    private final String keyPath;
+    private String endpointUrl;
+    private boolean isSecure;
+    private String certPath;
+    private String keyPath;
 
     private OpcUaClient client;
     private Object subscription; // We will use Object for now until finding the correct type
@@ -48,6 +48,18 @@ public class OpcUaConnector {
         this.isSecure = isSecure;
         this.certPath = certPath;
         this.keyPath = keyPath;
+    }
+
+    public void setConnection(String endpointUrl, boolean isSecure, String certPath, String keyPath) {
+        this.endpointUrl = endpointUrl;
+        this.isSecure = isSecure;
+        this.certPath = certPath;
+        this.keyPath = keyPath;
+    }
+
+    public void restartConnection() throws Exception {
+        disconnect();
+        connect();
     }
 
     public OpcUaClient getClient() {
